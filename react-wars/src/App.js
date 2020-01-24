@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
 
+// Components
+import { Container, Col, Row, Pagination, PaginationItem, PaginationLink, Spinner } from 'reactstrap'; 
+import PersonCard from './components/PersonCard';
+
 const  App = () => {
 
   const [apiData, setApiData] = useState([]);
@@ -24,7 +28,16 @@ const  App = () => {
 
   return (
     <div className="App">
-      
+      <Container fluid={true}>
+        {isLoading ? <Spinner color="primary" className="spinnerClass"/> : <></>}
+        <Row  xs="4" className="personRow">
+        {apiData.map(item => (
+          <Col className="personCard">
+          <PersonCard {...item}/>
+          </Col>
+        ))}
+        </Row>
+        </Container>
     </div>
   );
 }
