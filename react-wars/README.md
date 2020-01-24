@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Self-Study/Essay Questions
 
-## Available Scripts
+Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-In the project directory, you can run:
+- [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-### `yarn start`
+---
+ReactJS seeks to seperate parts of a application into "components". Each component is a seperate piece of the overall app and when a specific component changes it is the only thing that is updated rather than rendering the whole application of creating a lot of DOM events
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ ] What does it mean to _think_ in react?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
+To break the application into seperate parts.
+To think about what your state is, and what all needs access to it and when it needs to change
 
-### `yarn test`
+- [ ] Describe state.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+State is the underlying data of the application
+This could be data from a API, from user clicks, to error encountered within the app
+The state is used to store data that can then be used to update the UI
 
-### `yarn build`
+- [ ] Describe props.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+Props are read-only bits of data that are passed into components
+Passing props correctly ensure that each component has access to only what is needed, which in turn makes debugging
+and readibility better
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+A side effect is anything that affects something outside the scope of the function being ran
+To sync effects ina component you could use the useEffect hook, and set the state or prop you are 
+syncing with inside the dependency array
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+i.e
+useEffect(() => {
+    <!-- Some Code Here -->
+}, [Data to sync with here])
